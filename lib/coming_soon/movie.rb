@@ -1,5 +1,7 @@
 class ComingSoon::Movie
 
+    attr_accessor :title, :time, :description
+
    def self.scrape_movies
 
        html = Nokogiri::HTML(open('https://www.imdb.com/movies-in-theaters/?ref_=cs_inth'))
