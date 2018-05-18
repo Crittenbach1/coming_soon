@@ -9,8 +9,10 @@ class ComingSoon::Movie
        @list_items.each do |i|
          @movies << @movie = TestNokogiri::Test.new
          @movie.title = i.css("h4").text.strip
+         @movie.time = i.css("time").text.strip
+         @movie.description = i.css(".outline").text.strip
        end
-       
+
 
 
 
