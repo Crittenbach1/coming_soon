@@ -26,10 +26,10 @@ class ComingSoon::CLI
     while input != "exit"
      puts "enter a movie number for more info or type exit"
      input = gets.downcase.strip
-     if input.to_i > 0 && input.to_i < 12
-       puts "A Quiet Place (2018)"
-       puts "90 min"
-       puts "In a post-apocalyptic world, a family is forced to live in silence while hiding from monsters with ultra-sensitive hearing."
+     if input.to_i > 0 && input.to_i < 17
+       puts "#{@movies[input.to_i - 1].title}"
+       puts "#{@movies[input.to_i - 1].time}"
+       puts "#{@movies[input.to_i - 1].description}"
      elsif input == "list"
        list_movies
      else
