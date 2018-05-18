@@ -8,6 +8,8 @@ class ComingSoon::Movie
 
        @list_items = html.css('div.list.detail.sub-list div.list_item')
 
+       @movies = []
+
        @list_items.each do |i|
          @movies << @movie = TestNokogiri::Test.new
          @movie.title = i.css("h4").text.strip
@@ -15,9 +17,7 @@ class ComingSoon::Movie
          @movie.description = i.css(".outline").text.strip
        end
 
-
-
-
+       @movies
    end
 
 end
