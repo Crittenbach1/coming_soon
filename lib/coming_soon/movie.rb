@@ -8,9 +8,9 @@ class ComingSoon::Movie
 
        @list_items.each do |i|
          @movies << @movie = TestNokogiri::Test.new
-         
+         @movie.title = i.css("h4").text.strip
        end
-
+       
 
 
 
