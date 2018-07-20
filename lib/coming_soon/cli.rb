@@ -1,7 +1,9 @@
+require 'pry'
 class ComingSoon::CLI
 
-  def call 
+  def call
     welcome
+    scrape_movies
     list_movies
     view_movie
   end
@@ -11,13 +13,15 @@ class ComingSoon::CLI
     puts " "
   end
 
-  def list_movies
+  def scrape_movies
+    ComingSoon::Movie.scrape_movies
+  end
 
-    @movies = ComingSoon::Movie.scrape_movies
+  def list_movies
+    @movies = ComingSoon::Movie.all
 
     @movies.each_with_index do |m, index|
       puts "#{index + 1}. #{m.title}"
-
     end
   end
 
