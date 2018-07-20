@@ -1,8 +1,13 @@
+return 'pry'
 class ComingSoon::Movie
 
     attr_accessor :title, :time, :description
 
    @@all = []
+
+   def self.all
+    return @@all
+   end
 
    def self.scrape_movies
 
@@ -10,16 +15,13 @@ class ComingSoon::Movie
 
        @list_items = html.css('div.list.detail.sub-list div.list_item')
 
-       @movies = []
-
        @list_items.each do |i|
-         @movies << @movie = ComingSoon::Movie.new
+         @all << @movie = ComingSoon::Movie.new
          @movie.title = i.css("h4").text.strip
          @movie.time = i.css("time").text.strip
          @movie.description = i.css(".outline").text.strip
        end
 
-       @movies
    end
 
 end
