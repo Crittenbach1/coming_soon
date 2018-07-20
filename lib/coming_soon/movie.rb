@@ -12,9 +12,9 @@ class ComingSoon::Movie
 
      html = Nokogiri::HTML(open('https://www.imdb.com/movies-in-theaters/?ref_=cs_inth'))
 
-       @list_items = html.css('div.list.detail.sub-list div.list_item')
+       list_items = html.css('div.list.detail.sub-list div.list_item')
 
-       @list_items.each do |i|
+       list_items.each do |i|
          @@all << @movie = ComingSoon::Movie.new
          @movie.title = i.css("h4").text.strip
          @movie.time = i.css("time").text.strip
