@@ -1,6 +1,6 @@
 class ComingSoon::CLI
 
-  def call
+  def call 
     welcome
     list_movies
     view_movie
@@ -17,8 +17,8 @@ class ComingSoon::CLI
 
     @movies.each_with_index do |m, index|
       puts "#{index + 1}. #{m.title}"
-    end
 
+    end
   end
 
   def view_movie
