@@ -1,4 +1,3 @@
-return 'pry'
 class ComingSoon::Movie
 
     attr_accessor :title, :time, :description
